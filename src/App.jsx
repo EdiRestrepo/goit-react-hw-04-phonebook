@@ -81,6 +81,7 @@ const App = () => {
         contacts={filterArr(contacts)}
         del={deleteContactFromContactList}
       />
+      
     </div>
   );
 };

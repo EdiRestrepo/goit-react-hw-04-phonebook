@@ -1,24 +1,20 @@
-import React, { Component } from "react";
-import PropTypes from 'prop-types';
-import css from "./Filter.module.css";
+import PropTypes from "prop-types";
 
-export class Filter extends Component {
-
-  setFilterValue = event => {
-    let value = event.currentTarget.value.toUpperCase();
-    this.props.setFilterToState(value);
-  };
+export const Filter = ({ setFilterToState }) => {
   
-  render() {
-    return (
-      <div>
-        <label>Find contacts by name</label>
-        <br/>
-        <input onChange={this.setFilterValue}></input>
-      </div>
-    );
-  }
-}
+  const setFilterValue = (event) => {
+    let value = event.currentTarget.value.toUpperCase();
+    setFilterToState(value);
+  };
+
+  return (
+    <div>
+      <label>Find contacts by name</label>
+      <br />
+      <input onChange={setFilterValue}></input>
+    </div>
+  );
+};
 
 export default Filter;
 
